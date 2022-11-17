@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct I_Like_Me_BetterApp: App {
+    
+    @StateObject private var dataController = DataController()
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            QuoteView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

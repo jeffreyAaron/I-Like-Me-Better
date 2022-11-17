@@ -16,6 +16,11 @@
 		0044EB5B292569C000F91F58 /* I_Like_Me_BetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB5A292569C000F91F58 /* I_Like_Me_BetterTests.swift */; };
 		0044EB65292569C000F91F58 /* I_Like_Me_BetterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB64292569C000F91F58 /* I_Like_Me_BetterUITests.swift */; };
 		0044EB67292569C000F91F58 /* I_Like_Me_BetterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB66292569C000F91F58 /* I_Like_Me_BetterUITestsLaunchTests.swift */; };
+		0044EB7429256A5300F91F58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB7329256A5300F91F58 /* HomeView.swift */; };
+		0044EB7629256BF300F91F58 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB7529256BF300F91F58 /* ImageSlider.swift */; };
+		0044EB792925EB2C00F91F58 /* lauvData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB772925EB2C00F91F58 /* lauvData.xcdatamodeld */; };
+		0044EB7B2925EBC400F91F58 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB7A2925EBC400F91F58 /* DataController.swift */; };
+		0044EB7F2925F29800F91F58 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044EB7E2925F29800F91F58 /* QuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		0044EB60292569C000F91F58 /* I Like Me BetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I Like Me BetterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0044EB64292569C000F91F58 /* I_Like_Me_BetterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Like_Me_BetterUITests.swift; sourceTree = "<group>"; };
 		0044EB66292569C000F91F58 /* I_Like_Me_BetterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Like_Me_BetterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0044EB7329256A5300F91F58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0044EB7529256BF300F91F58 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		0044EB782925EB2C00F91F58 /* lauvQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lauvQuotes.xcdatamodel; sourceTree = "<group>"; };
+		0044EB7A2925EBC400F91F58 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		0044EB7E2925F29800F91F58 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,8 @@
 		0044EB38292569BE00F91F58 = {
 			isa = PBXGroup;
 			children = (
+				0044EB772925EB2C00F91F58 /* lauvData.xcdatamodeld */,
+				0044EB7A2925EBC400F91F58 /* DataController.swift */,
 				0044EB43292569BE00F91F58 /* I Like Me Better */,
 				0044EB59292569C000F91F58 /* I Like Me BetterTests */,
 				0044EB63292569C000F91F58 /* I Like Me BetterUITests */,
@@ -104,6 +116,9 @@
 				0044EB4D292569C000F91F58 /* Persistence.swift */,
 				0044EB4F292569C000F91F58 /* I_Like_Me_Better.xcdatamodeld */,
 				0044EB4A292569C000F91F58 /* Preview Content */,
+				0044EB7329256A5300F91F58 /* HomeView.swift */,
+				0044EB7529256BF300F91F58 /* ImageSlider.swift */,
+				0044EB7E2925F29800F91F58 /* QuoteView.swift */,
 			);
 			path = "I Like Me Better";
 			sourceTree = "<group>";
@@ -265,7 +280,12 @@
 			files = (
 				0044EB51292569C000F91F58 /* I_Like_Me_Better.xcdatamodeld in Sources */,
 				0044EB4E292569C000F91F58 /* Persistence.swift in Sources */,
+				0044EB7629256BF300F91F58 /* ImageSlider.swift in Sources */,
 				0044EB47292569BE00F91F58 /* ContentView.swift in Sources */,
+				0044EB792925EB2C00F91F58 /* lauvData.xcdatamodeld in Sources */,
+				0044EB7B2925EBC400F91F58 /* DataController.swift in Sources */,
+				0044EB7429256A5300F91F58 /* HomeView.swift in Sources */,
+				0044EB7F2925F29800F91F58 /* QuoteView.swift in Sources */,
 				0044EB45292569BE00F91F58 /* I_Like_Me_BetterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +614,16 @@
 			);
 			currentVersion = 0044EB50292569C000F91F58 /* I_Like_Me_Better.xcdatamodel */;
 			path = I_Like_Me_Better.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		0044EB772925EB2C00F91F58 /* lauvData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0044EB782925EB2C00F91F58 /* lauvQuotes.xcdatamodel */,
+			);
+			currentVersion = 0044EB782925EB2C00F91F58 /* lauvQuotes.xcdatamodel */;
+			path = lauvData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
