@@ -27,26 +27,28 @@ struct ImageSlider: View {
         var bounds = UIScreen.main.bounds
         var width = bounds.size.width
 
-        VStack {
-            Text(current_title)
-            TabView (selection: $selectedPageIndex) {
-                ForEach(image_urls.indices, id: \.self) {
-                    index in
-                    AsyncImage(url: URL(string: image_urls[index])) { image in
-                        image.resizable().scaledToFit()
-                    } placeholder: {
-                        ProgressView()
+        NavigationView {
+            VStack {
+                
+                TabView (selection: $selectedPageIndex) {
+                    ForEach(image_urls.indices, id: \.self) {
+                        index in
+                        AsyncImage(url: URL(string: image_urls[index])) { image in
+                            image.resizable().scaledToFit()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: width-32)
+                        .cornerRadius(10)
                     }
-                    .frame(width: width)
-                    .cornerRadius(10)
                 }
-            }
-            .onChange(of: selectedPageIndex) { newValue in
-                debugPrint("[a]: new value \(newValue)")
-                current_title = image_titles[selectedPageIndex]
-            }
-            .tabViewStyle(PageTabViewStyle())
-            
+                .onChange(of: selectedPageIndex) { newValue in
+                    debugPrint("[a]: new value \(newValue)")
+                    current_title = image_titles[selectedPageIndex]
+                }
+                .tabViewStyle(PageTabViewStyle())
+                
+            }.navigationTitle(current_title)
         }
     }
 }
@@ -55,6 +57,6 @@ struct ImageSlider_Previews: PreviewProvider {
     static var previews: some View {
         ImageSlider(
             image_urls: ["https://cdn.discordapp.com/attachments/787088938933157952/1019865527402889266/DC2_6554.jpg", "https://cdn.discordapp.com/attachments/889229310131589150/1015820393401036870/IMG_20220128_090940627.jpg"],
-            image_titles: ["The Best Members of App Dev Team and Me", "Jack and Me"])
+            image_titles: ["App Dev and Me", "Jack and Me"])
     }
 }
