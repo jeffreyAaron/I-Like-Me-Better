@@ -68,7 +68,7 @@ class SecondScreen: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(updateViewWithName), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(updateViewWithName), userInfo: nil, repeats: true)
     
         
     }

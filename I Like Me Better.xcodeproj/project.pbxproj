@@ -114,9 +114,17 @@
 			path = "Learn UI Kit";
 			sourceTree = "<group>";
 		};
+		0044824E292B62960034EB9E /* Learn Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Learn Firebase";
+			sourceTree = "<group>";
+		};
 		0044EB38292569BE00F91F58 = {
 			isa = PBXGroup;
 			children = (
+				0044824E292B62960034EB9E /* Learn Firebase */,
 				0044822B292B422F0034EB9E /* Learn UI Kit */,
 				0044EB43292569BE00F91F58 /* I Like Me Better */,
 				0044EB59292569C000F91F58 /* I Like Me BetterTests */,
