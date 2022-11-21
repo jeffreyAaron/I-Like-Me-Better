@@ -17,7 +17,7 @@ class SecondScreen: UIViewController {
     
     var index : Int = 0
     
-    let names : [String] = ["you", "kaitlyn", "hannah", "jennifer", "rachel", "both kelly's :)", "krystal", "richard", "pailin", "sahanna", "xing", "shin", "cody", "nipun", "celena", "aiden", "angela", "channing", "cindy", "ekam", "jesse", "mathew", "may", "sophie", "tia", "yingchi"]
+    let names : [String] = ["you", "kaitlyn", "hannah", "jennifer", "rachel", "both kelly's :)", "krystal", "richard", "pailin", "sahanna", "xing", "shin", "cody", "nipun", "celena", "aiden", "angela", "channing", "cindy", "ekam", "jesse", "mathew", "may", "sophie", "tia", "yingchi", "aaron"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
