@@ -87,8 +87,6 @@ class FirebasePage: UIViewController {
                 print(self.nameString)
                 self.setUpFirebaseLabel()
             })
-        
-        
     }
 
 

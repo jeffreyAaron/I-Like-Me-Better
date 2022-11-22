@@ -39,6 +39,9 @@
 		004482A3292B63DD0034EB9E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 004482A2292B63DD0034EB9E /* FirebaseStorage */; };
 		004482A5292B63DD0034EB9E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 004482A4292B63DD0034EB9E /* FirebaseStorageCombine-Community */; };
 		004482A9292B65F20034EB9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 004482A8292B65F20034EB9E /* GoogleService-Info.plist */; };
+		004482AB292D5B2D0034EB9E /* RichardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004482AA292D5B2D0034EB9E /* RichardViewController.swift */; };
+		004482AE292D5E870034EB9E /* UIViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004482AD292D5E870034EB9E /* UIViewUtil.swift */; };
+		004482B0292D60D00034EB9E /* RichardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004482AF292D60D00034EB9E /* RichardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		00448264292B63520034EB9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00448269292B63520034EB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004482A8292B65F20034EB9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		004482AA292D5B2D0034EB9E /* RichardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichardViewController.swift; sourceTree = "<group>"; };
+		004482AD292D5E870034EB9E /* UIViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtil.swift; sourceTree = "<group>"; };
+		004482AF292D60D00034EB9E /* RichardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichardTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,14 +114,25 @@
 		0044825A292B63520034EB9E /* Learn Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				004482AC292D5E660034EB9E /* Extensions */,
 				004482A8292B65F20034EB9E /* GoogleService-Info.plist */,
 				0044825B292B63520034EB9E /* AppDelegate.swift */,
 				0044825D292B63520034EB9E /* SceneDelegate.swift */,
 				0044825F292B63520034EB9E /* FirebasePage.swift */,
 				00448264292B63520034EB9E /* Assets.xcassets */,
 				00448269292B63520034EB9E /* Info.plist */,
+				004482AA292D5B2D0034EB9E /* RichardViewController.swift */,
+				004482AF292D60D00034EB9E /* RichardTableViewCell.swift */,
 			);
 			path = "Learn Firebase";
+			sourceTree = "<group>";
+		};
+		004482AC292D5E660034EB9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				004482AD292D5E870034EB9E /* UIViewUtil.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,8 +238,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				00448260292B63520034EB9E /* FirebasePage.swift in Sources */,
+				004482AE292D5E870034EB9E /* UIViewUtil.swift in Sources */,
 				0044825C292B63520034EB9E /* AppDelegate.swift in Sources */,
+				004482AB292D5B2D0034EB9E /* RichardViewController.swift in Sources */,
 				0044825E292B63520034EB9E /* SceneDelegate.swift in Sources */,
+				004482B0292D60D00034EB9E /* RichardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
