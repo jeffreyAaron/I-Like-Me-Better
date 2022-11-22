@@ -22,17 +22,36 @@ class DataManager {
     // firbase refs
     static var userRef: DatabaseReference!
     static var messageRef: DatabaseReference!
+    
+    static var hasMessagesLoaded = false
+    static var hasUsersLoaded = false
+
 
 
     
     static func registerCallback(callback: DataLoadedCallback) {
         callbacks.append(callback)
+        
+        if(hasUsersLoaded) {
+            callback.onUserDataLoaded()
+        }
+        if(hasMessagesLoaded) {
+            callback.onMessageDataLoaded()
+        }
     }
     
-    private static func pushEventToCallbacks() {
+    private static func pushUserEventToCallbacks() {
         for callback in callbacks {
             callback.onUserDataLoaded()
         }
+        hasUsersLoaded = true
+    }
+    
+    private static func pushMessageEventToCallbacks() {
+        for callback in callbacks {
+            callback.onMessageDataLoaded()
+        }
+        hasMessagesLoaded = true
     }
     
     static func startFirebaseLoad() {
@@ -48,9 +67,8 @@ class DataManager {
                     
                     users.append(UserData(name: name))
                 }
-                for callback in callbacks {
-                    callback.onUserDataLoaded()
-                }
+                pushUserEventToCallbacks()
+                hasMessagesLoaded = true
             })
         
         // MARK: Message Data
@@ -62,11 +80,17 @@ class DataManager {
                 messages = []
                 for case let childData as DataSnapshot in snapshot.children {
                     print(childData.description)
+                    
+                    let value = childData.value as? NSDictionary
+
+                    let destination = value?["destination"] as? String ?? ""
+                    let message = value?["message"] as? String ?? ""
+                    let source = value?["source"] as? String ?? ""
+
+                    messages.append(MessageData(destination: destination, message: message, source: source, timestamp: 0))
                     // self.nameString += childData.key + "\n" + "\n"
                 }
-                for callback in callbacks {
-                    callback.onUserDataLoaded()
-                }
+                pushMessageEventToCallbacks()
             })
     }
     

@@ -26,7 +26,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     func set(user: UserData) {
-        print(user.name)
+        // print(user.name)
         titleLabel.text = user.name
     }
     

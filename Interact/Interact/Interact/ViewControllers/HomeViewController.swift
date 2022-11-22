@@ -58,12 +58,23 @@ extension HomeViewController: DataLoadedCallback, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(DataManager.users[indexPath.row].name)
+        openMessageScreen(user: DataManager.users[indexPath.row])
+    }
+    
     func onUserDataLoaded() {
         tableView.reloadData()
     }
     
     func onMessageDataLoaded() {
         
+    }
+    
+    func openMessageScreen (user: UserData) {
+        let messageScreen = MessageViewController()
+        messageScreen.setData(user: user)
+        navigationController?.pushViewController(messageScreen, animated: true)
     }
     
 }

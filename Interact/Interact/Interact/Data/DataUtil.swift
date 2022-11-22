@@ -16,4 +16,8 @@ class DataUtil {
     static func formatName(name: String) -> String {
         return name.replacingOccurrences(of: "-", with: " ")
     }
+    
+    static func findMessageByUser(user: UserData) -> [MessageData] {
+        return DataManager.messages.filter {$0.destination == user.name}
+    }
 }
