@@ -40,7 +40,8 @@ class FirebasePage: UIViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(scrollView)
-        scrollView.addSubview(firebaseDataLabel)
+        contentView.addSubview(firebaseDataLabel)
+        scrollView.addSubview(contentView)
         firebaseDataLabel.numberOfLines = 100
         firebaseDataLabel.text = nameString
         
@@ -52,62 +53,23 @@ class FirebasePage: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            firebaseDataLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            firebaseDataLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            firebaseDataLabel.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            firebaseDataLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            firebaseDataLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            firebaseDataLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            firebaseDataLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            firebaseDataLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            firebaseDataLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            firebaseDataLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            firebaseDataLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+
         ])
         
         
-        
-//        view.addSubview(scrollView)
-//
-//
-//        // scrollView.backgroundColor = .blue
-//
-//        NSLayoutConstraint.activate([
-//            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//
-//        ])
-//
-//
-//        // contentView.addSubview(firebaseDataLabel)
-//
-//        contentView.axis = .vertical
-//
-//        NSLayoutConstraint.activate([
-//            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-//            contentView.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor),
-//            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-//            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-//        ])
-//
-//        firebaseDataLabel.numberOfLines = 50
-//        firebaseDataLabel.text = nameString
-//
-//        contentView.addArrangedSubview(firebaseDataLabel)
-//
-//
-//
-//        NSLayoutConstraint.activate([
-//            firebaseDataLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-//            firebaseDataLabel.heightAnchor.constraint(equalToConstant: firebaseDataLabel.frame.height),
-//
-//        ])
-//
-//        scrollView.addSubview(contentView)
-//
-//
-//        // contentView.heightAnchor.constraint(equalTo: firebaseDataLabel.heightAnchor).isActive = true
-//
-//
-//        // scrollView.contentSize = contentView.frame.size
-
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
         
     }
     
@@ -117,6 +79,7 @@ class FirebasePage: UIViewController {
             .child("i-like-me-better")
             .child("users")
             .observe(.value, with: {snapshot in
+                self.nameString = ""
                 for case let childData as DataSnapshot in snapshot.children {
                     print(childData.key)
                     self.nameString += childData.key + "\n" + "\n"
