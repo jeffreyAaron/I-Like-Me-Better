@@ -45,7 +45,7 @@ class RichardViewController: UIViewController {
     
     func setUpNavigationUI () {
         view.backgroundColor = .systemBlue
-        title = "i miss richard"
+        title = "firebase loading"
     }
     
     func configureTableView () {
