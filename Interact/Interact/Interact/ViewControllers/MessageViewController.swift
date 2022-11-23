@@ -51,7 +51,7 @@ class MessageViewController: UIViewController, DataLoadedCallback {
         inputButton.configuration?.buttonSize = .large
         
         // Textfield
-        inputTextField.backgroundColor = .systemRed
+        inputTextField.backgroundColor = .lightGray
         inputTextField.placeholder = "Enter your compliment here"
         
         inputContentView.addSubview(inputTextField)
@@ -140,6 +140,11 @@ class MessageViewController: UIViewController, DataLoadedCallback {
     @objc func sendMessage() {
         print("send message")
         let messageToSend = inputTextField.text
+        
+        if(messageToSend?.isEmpty ?? true) {
+            return
+        }
+        
         inputTextField.text = ""
         
         DataManager.pushMessage(messageData:
