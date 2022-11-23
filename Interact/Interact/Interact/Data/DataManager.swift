@@ -54,6 +54,21 @@ class DataManager {
         hasMessagesLoaded = true
     }
     
+    static func pushMessage(messageData: MessageData) {
+        let messageRef: DatabaseReference = Database.database().reference()
+        guard let key = messageRef.child(DataConstants.dbLocationMessage).childByAutoId().key else { return }
+        let message: [String : Any] = [
+            DataConstants.dbLocationMessageDestination: messageData.destination,
+            DataConstants.dbLocationMessageMessage: messageData.message,
+            DataConstants.dbLocationMessageSource: messageData.source,
+            DataConstants.dbLocationMessageTimestamp: messageData.timestamp
+            ]
+        let childUpdates = ["/\(DataConstants.dbLoctionRoot)/\(DataConstants.dbLocationMessage)/\(key)": message]
+        
+        messageRef.updateChildValues(childUpdates)
+        
+    }
+    
     static func startFirebaseLoad() {
         // MARK: User Data
         userRef = Database.database().reference()
@@ -83,9 +98,9 @@ class DataManager {
                     
                     let value = childData.value as? NSDictionary
 
-                    let destination = value?["destination"] as? String ?? ""
-                    let message = value?["message"] as? String ?? ""
-                    let source = value?["source"] as? String ?? ""
+                    let destination = value?[DataConstants.dbLocationMessageDestination] as? String ?? ""
+                    let message = value?[DataConstants.dbLocationMessageMessage] as? String ?? ""
+                    let source = value?[DataConstants.dbLocationMessageSource] as? String ?? ""
 
                     messages.append(MessageData(destination: destination, message: message, source: source, timestamp: 0))
                     // self.nameString += childData.key + "\n" + "\n"
