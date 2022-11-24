@@ -24,7 +24,7 @@ class MessageViewController: UIViewController, DataLoadedCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         title = user.name
         
         configureInputContentView()
@@ -51,8 +51,9 @@ class MessageViewController: UIViewController, DataLoadedCallback {
         inputButton.configuration?.buttonSize = .large
         
         // Textfield
-        inputTextField.backgroundColor = .lightGray
-        inputTextField.placeholder = "Enter your compliment here"
+        inputTextField.backgroundColor = .tertiarySystemBackground
+        inputTextField.textColor = .label
+        // inputTextField.placeholder = "Enter your message here"
         
         inputContentView.addSubview(inputTextField)
         inputContentView.addSubview(inputButton)
